@@ -1,0 +1,5 @@
+中文乱码：git config core.quotepath false
+输出着色：git config --global color.ui true
+命令别名：git config alias.st status
+
+--global  对应~/.gitconfig 文件    局部设置对应.git/config 文件

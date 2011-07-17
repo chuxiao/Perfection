@@ -1,0 +1,3 @@
+一、创建Django 项目
+	django-admin.py startproject mysite                   mysite 为项目名
+
