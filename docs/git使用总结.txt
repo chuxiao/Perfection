@@ -3,3 +3,4 @@
 命令别名：git config alias.st status
 
 --global  对应~/.gitconfig 文件    局部设置对应.git/config 文件
+自动补全配置文件只需要根据说明来即可
