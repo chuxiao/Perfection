@@ -1,0 +1,150 @@
+" 设置文件编码
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set encoding=utf-8
+" set termencoding=cp936
+language messages zh_CN.UTF-8
+
+" 去除工具栏
+" set guioptions-=T
+
+" 退出时需要确认
+" set confirm
+
+" 与windows共享剪贴板
+" set clipboard+=unnamed
+
+" 文件类型侦测
+filetype on
+filetype plugin on
+filetype plugin indent on
+
+" 配色类型
+colorscheme desert
+set background=dark
+
+" 语法高亮
+syntax enable
+syntax on
+
+" 高亮显示搜索字符串
+set hlsearch
+
+" 高亮字符，让其不受100列限制
+" :highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
+" :match OverLength '\%81v.*'
+
+" 状态行颜色
+highlight StatusLine guifg=SlateBlue guibg=Yellow
+highlight StatusLineNC guifg=Gray guibg=White
+
+" 带有如下符号的单词不要被换行分割
+set iskeyword+=_,$,@,%,#,-
+
+" 字符间插入的像素行数目
+set linespace=0
+
+" 增强模式中的命令行自动完成操作
+set wildmenu
+
+" 在状态行上显示光标所在位置的行号和列号
+set ruler
+set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
+
+" 使回格键（backspace）正常处理indent, eol, start等
+set backspace=2
+
+" 允许backspace和光标键跨越行边界
+set whichwrap+=<,>,h,l
+
+" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key
+
+" 启动的时候不显示那个援助索马里儿童的提示
+set shortmess=atI
+
+" 通过使用: commands命令，告诉我们文件的哪一行被改变过
+set report=0
+
+" 不让vim发出讨厌的滴滴声
+set noerrorbells
+
+" 在被分割的窗口间显示空白，便于阅读
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+
+" 高亮显示匹配的括号
+set showmatch
+
+" 在搜索时，输入的词句的逐字符高亮（类似firefox的搜索）
+set incsearch
+
+" 总是显示状态行
+set laststatus=2
+
+" 我的状态行显示的内容（包括文件类型和解码）
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+" 缩进设置
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+" 显示TAB 为<+++
+set list
+set list listchars=tab:<+,trail:-
+
+" 显示行尾空白
+highlight WhitespaceEOL ctermbg=red guibg=red 
+match WhitespaceEOL /\s\+$/
+
+" 取消自动换行
+set wrap!
+
+set number
+nnoremap <F2> :set nonumber!<CR> :set foldcolumn=0<CR>
+
+" TagList
+" let Tlist_Ctags_Cmd = \"c:\\Vim\\ctags.exe"
+" set tags="c:\\Vim\\ctags"
+
+" Taglist variables
+" Display function name in status bar:
+let g:ctags_statusline=1
+" Automatically start script
+let generate_tags=1
+let Tlist_File_Fold_Auto_Close =1
+
+" Displays taglist results in a vertical window:
+let Tlist_Use_Horiz_Window=0
+
+" Shorter commands to toggle Taglist display
+" nnoremap TT :TlistToggle<CR>
+map <F4> :TlistToggle<CR>
+
+" Various Taglist diplay config:
+let Tlist_Use_Right_Window = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+:map <F9> :!ctags %<CR
+
+
+" python syntax
+" let g:pydiction_location="c:\\Vim\vimfiles\\python_pydict"
+
+"NERD_tree
+nnoremap <F3> :NERDTreeToggle <CR>
+:let NERDTreeIgnore=['\.pyc$', '\~$']  "文件类型过滤器
+
+" TAB 页设置
+:map <F5> :tabprevious<CR>
+:map <F6> :tabnext<CR>
+:map <C-N> :tabnew .<CR>
+:map <C-C> :tabclose <CR>
+
+autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+autocmd FileType python set complete+=k~/.vim/after/ftplugin/python_pydiction.vim isk+=.,(
