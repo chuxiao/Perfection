@@ -7,3 +7,6 @@
     指定端口：python manage.py runserver 8080
     指定IP 和商品：python manage.py runserver 210.51.190.88:8080
 
+三、创建Django 的数据库
+    python manage.py syncdb
+
