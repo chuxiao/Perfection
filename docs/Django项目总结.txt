@@ -1,3 +1,9 @@
 一、创建Django 项目
 	django-admin.py startproject mysite                   mysite 为项目名
 
+二、启动Django 服务器
+    在项目目录下运行 python manage.py runserver
+    在浏览器输入http://127.0.0.1:8000/ 可看到输出结果
+    指定端口：python manage.py runserver 8080
+    指定IP 和商品：python manage.py runserver 210.51.190.88:8080
+
