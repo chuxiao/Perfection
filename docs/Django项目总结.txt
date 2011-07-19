@@ -10,3 +10,6 @@
 三、创建Django 的数据库
     python manage.py syncdb
 
+四、创建Django 应用程序
+    python manage.py startapp app_name
+
