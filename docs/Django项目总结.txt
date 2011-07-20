@@ -13,3 +13,13 @@
 四、创建Django 应用程序
     python manage.py startapp app_name
 
+五、查看Model 生成表结构
+    python manage.py sql polls                   polls 为应用名
+
+六、验证Model 构造的正确性
+    python manage.py validate
+
+七、删除Model 表结构
+    python manage.py sqlclear polls
+
+
