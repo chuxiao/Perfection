@@ -9,6 +9,7 @@ class ChoiceInline(admin.TabularInline):
 
 
 class PollAdmin(admin.ModelAdmin):
+    list_display = ('question', 'pub_date', 'was_published_today')
 
     fieldsets = [
         (None,                  {'fields': ['question', ]}),
