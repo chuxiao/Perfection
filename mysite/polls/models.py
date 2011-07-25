@@ -9,6 +9,8 @@ class Poll(models.Model):
     def was_published_today(self):
         return self.pub_date.date() == datetime.date.today()
 
+    was_published_today.short_description = 'published today?'
+
     def __unicode__(self):
         return self.question
 
